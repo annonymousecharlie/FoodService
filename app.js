@@ -1,8 +1,12 @@
-const express = require('express')
-const app = express()
-
-
-app.listen(8080)
-app.get('/ping', function (req, res) {
-    res.send('GET request to homepage')
-  })
+let express = require('express'); 
+let app = express(); 
+app.get('/', 
+    (req, res) => 
+        { res.send('Hello Express'); 
+        }
+    ); 
+app.listen(8081, () => 
+    { 
+        console.log('App listening on port 8081'); 
+    }
+);
