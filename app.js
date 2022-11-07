@@ -12,7 +12,9 @@ var foodRouter = require('./routes/foods')
 var app = express();
 
 
-app.listen(8080)
+app.listen(3032,()=>{
+  console.log("running at 3032")
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,7 +27,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //app.listen(8080)
-app.use('/team',teamRouter)
+app.use('/Food/team',teamRouter)
 app.use('/Food/all',foodRouter)
 
 

@@ -5,12 +5,12 @@ const foods = require('../modules/food');
 const url = require('url');
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-  res.render('food', { title: 'Food Service' });
-});
+// router.get('/', function (req, res, next) {
+//   res.render('food', { title: 'Food Service' });
+// });
 
 // can process any existing query paramters (e.g.:?firstname=John)
-router.get('/foods', (request, response, next) => {
+router.get('/', (request, response, next) => {
 
   let get_params = url.parse(request.url, true).query;
   console.log('got into foods');
@@ -47,7 +47,7 @@ router.get('/foods', (request, response, next) => {
 });
 
 // example for using path variable
-router.get('/foods/:location', (request, response, next) => {
+router.get('/:location', (request, response, next) => {
     console.log(request.params);
   const param = request.params.location;
   console.log('got into /foods/:location ' + param);
