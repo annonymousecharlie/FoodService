@@ -1,17 +1,12 @@
 {
-    "team": "TEAM ACPR",
+    "team": "TEAM-food-backend",
     "membersList": [
-    {
-      "name": "Aarushi Saini"
-    },
-    {
-        "name": "Chethan G Kottari"
-    },
-    {
-        "name": "Preetham V K"
-    },
-    {
-        "name": "M V Ranjitha"
-    }
-  ]
+      "Aarushi Saini",
+      "Chethan G Kottari",
+      "Preetham V K",
+       "M V Ranjitha"
+
+    ]
 }
+    
+ 
