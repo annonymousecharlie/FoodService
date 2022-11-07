@@ -12,7 +12,9 @@ var foodRouter = require('./routes/foods')
 var app = express();
 
 
-app.listen(8080)
+app.listen(3032,()=>{
+  console.log("running at 3032")
+})
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
