@@ -14,13 +14,8 @@ exports.query_by_arg = (arg, value) => {
     var obj = JSON.parse(fs.readFileSync('./data/Foods.json', 'utf8'));
     // all foods are stored in a "result" object
     let result = json_result;
-    console.log("result is  " + result);
-    console.log("result length is  " + result.length);
-    
-    console.log("query by arg: " + arg + " " + value);
     for (let i = 0; i < result.length; i++) {
         let food = result[i];
-        console.log(i + " obj is is  " + food);
 
         if (food[arg] === undefined){
             throw new Error("Unknow parameter " + arg);
@@ -39,8 +34,6 @@ exports.modifyPrice = (param) => {
 
     let modifiedTax = 0;
 
-    console.log(result);
-
     if(param.toLowerCase() === "raleigh") {
         modifiedTax = 1.075;
     }
@@ -51,13 +44,9 @@ exports.modifyPrice = (param) => {
         throw new Error("Unknow parameter " + param);
     }
 
-    console.log(modifiedTax);
-
     for (let i = 0; i < result.length; i++) {
         result[i].price = (result[i].price * modifiedTax).toFixed(3);
     }
-
-    console.log(result);
 
     return result;
 
