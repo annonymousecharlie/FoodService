@@ -41,6 +41,8 @@ router.get('/', (request, response, next) => {
 router.get('/:location', (request, response, next) => {
   const param = request.params.location;
 
+  let modifiedResult = foods.modifyPrice(param);
+
   console.log("Modified " + modifiedResult);
 
   if (modifiedResult) {
