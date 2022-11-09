@@ -13,31 +13,22 @@ const url = require('url');
 router.get('/', (request, response, next) => {
 
   let get_params = url.parse(request.url, true).query;
-  console.log('got into foods');
-  console.log(foods.list());
-  console.log(request.url);
 
   if (Object.keys(get_params).length == 0) {
-    console.log('no params');
     response.setHeader('content-type', 'application/json');
     
-    console.log(foods.list());
     response.end(JSON.stringify(foods.list()));
   } else {
     let key = Object.keys(get_params)[0]; // get first parameter only
-    console.log("First key is: " + key);
     let value = request.query[key];
-    console.log('params ' + value);
     try {
       let result = foods.query_by_arg(key, value);
     } catch (err) {
-      console.log("Caught exception.");
       //createError(500);
       res.status(500).send('Something broke!');
     }
     let result = foods.query_by_arg(key, value);
     if (result) {
-        console.log(result);
       response.setHeader('content-type', 'application/json');
       response.end(JSON.stringify(result));
     } else {
@@ -48,11 +39,7 @@ router.get('/', (request, response, next) => {
 
 // example for using path variable
 router.get('/:location', (request, response, next) => {
-    console.log(request.params);
   const param = request.params.location;
-  console.log('got into /foods/:location ' + param);
-
-  const modifiedResult = foods.modifyPrice(param);
 
   console.log("Modified " + modifiedResult);
 

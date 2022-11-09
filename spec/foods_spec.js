@@ -1,12 +1,12 @@
 const request = require("request");
 
-const base_url = 'http://localhost:8080/Food/all';
+const base_url = 'http://localhost:3032/Food/all';
 //foods
 //foods/durham
 //foods/raleigh
-const allFoods_url = base_url + 'foods';
-const durhamFoods_url = base_url + 'foods/durham';
-const raleighFoods_url = base_url + 'foods/raleigh';
+const allFoods_url = base_url + '/';
+const durhamFoods_url = base_url + '/durham';
+const raleighFoods_url = base_url + '/raleigh';
 
 describe("First Node Test Server", function () {
     describe("GET /foods", () => {
@@ -24,7 +24,7 @@ describe("First Node Test Server", function () {
             });
         });
     });
-    describe("GET /foods/durham", () => {
+    describe("GET /durham", () => {
         it("returns status code 200",  (done) => {
             request.get(base_url, (error, response, body) => {
                 expect(response.statusCode).toBe(200);

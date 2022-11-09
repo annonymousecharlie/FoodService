@@ -1,6 +1,6 @@
 let request = require("request");
 
-const base_url = "http://localhost:8080/team";
+const base_url = "http://localhost:3032/Food/team";
 
 console.log("Starting test");
 
